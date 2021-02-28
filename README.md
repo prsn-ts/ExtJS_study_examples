@@ -1,2 +1,2 @@
-# ExtJS_study_examples
-ExtJS 공부용
+# ExtJS 공부용
+"프로페셔널 ExtJS 5 RIA 프로그래밍" 이라는 책을 보고 따라서 쳐본 소스코드입니다.
