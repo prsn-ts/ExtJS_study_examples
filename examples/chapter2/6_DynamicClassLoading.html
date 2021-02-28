@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ext JS 테마스타일 파일 -->
+    <link rel="stylesheet" href="/bootstrap.css">
+    <!-- Ext JS 코어 라이브러리 -->
+    <script type="text/javascript" src="/ext/build/ext-all-debug.js"></script>
+    <title>6_DynamicClassLoading</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'MyExtJS': '/app'
+            }
+        });
+        Ext.require([
+            'MyExtJS.view.chapter2.DynamicPanel'
+        ]);
+
+        Ext.onReady(function (){
+            Ext.create('MyExtJS.view.chapter2.DynamicPanel', {
+                title: '안녕하세요 ^^',
+                renderTo: document.body
+            });
+        });
+    </script>
+</body>
+</html>

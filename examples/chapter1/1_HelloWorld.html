@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ext JS 테마스타일 파일 -->
+    <link rel="stylesheet" href="/bootstrap.css">
+    <!-- Ext JS 코어 라이브러리 -->
+    <script type="text/javascript" src="/ext/build/ext-all-debug.js"></script>
+    <title>1_HelloWorld</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'MyExtJS': '/app'
+            }
+        });
+        Ext.require([
+            'MyExtJS.view.chapter1.HelloWorld'
+        ]);
+
+        Ext.onReady(function (){
+            Ext.create('MyExtJS.view.chapter1.HelloWorld', {
+                renderTo: document.body,
+                width: '100%',
+                height: 150,
+                bodyPadding: 5
+            });
+        });
+    </script>
+</body>
+</html>

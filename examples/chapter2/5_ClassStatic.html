@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ext JS 테마스타일 파일 -->
+    <link rel="stylesheet" href="/bootstrap.css">
+    <!-- Ext JS 코어 라이브러리 -->
+    <script type="text/javascript" src="/ext/build/ext-all-debug.js"></script>
+    <title>5_ClassStatic</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'MyExtJS': '/app'
+            }
+        });
+        Ext.require([
+            'MyExtJS.view.chapter2.ClassStatic'
+        ]);
+
+        Ext.onReady(function (){
+            let myWindow = Ext.create('MyExtJS.view.chapter2.ClassStatic', {
+                title: '안녕하세요 ^^',
+                renderTo: document.body,
+                bottomBar: {
+                    height: 60
+                }
+            });
+            let static1 = MyExtJS.view.chapter2.ClassStatic.student('홍길동');
+            let static2 = MyExtJS.view.chapter2.ClassStatic.student('김철수');
+            console.log(static2.getStudentName());
+            console.log(MyExtJS.view.chapter2.ClassStatic.studentCount);
+        });
+    </script>
+</body>
+</html>

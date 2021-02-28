@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ext JS 테마스타일 파일 -->
+    <link rel="stylesheet" href="/bootstrap.css">
+    <!-- Ext JS 코어 라이브러리 -->
+    <script type="text/javascript" src="/ext/build/ext-all-debug.js"></script>
+    <title>4_ClassConfig</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'MyExtJS': '/app'
+            }
+        });
+        Ext.require([
+            'MyExtJS.view.chapter2.ClassConfig'
+        ]);
+
+        Ext.onReady(function (){
+            let myWindow = Ext.create('MyExtJS.view.chapter2.ClassConfig', {
+                subject: '안녕하세요 ^^',
+                renderTo: document.body,
+                bottomBar: {
+                    height: 60
+                }
+            });
+            console.log(myWindow.getSubject());
+            myWindow.setSubject('반갑습니다.^^');
+            console.log(myWindow.getSubject());
+            myWindow.setSubject(null);
+            myWindow.setBottomBar({ height: 100 });
+            console.log(myWindow.getBottomBar().getHeight());    
+        });
+    </script>
+</body>
+</html>
