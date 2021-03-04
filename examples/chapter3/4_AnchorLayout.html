@@ -30,7 +30,13 @@
 
         Ext.onReady(function (){
             Ext.create('MyExtJS.view.chapter3.AnchorLayout', {
-                renderTo: document.body
+                renderTo: document.body,
+                items: [{ //AnchorLayout를 상속하여 items의 속성들을 이 클래스에 맞게 새로 오버라이드한다.
+                    xtype: 'panel',
+                    title: 'Offsets으로 부모크기를 사용',
+                    html: '너비는 부모 패널 너비(300px) - 50px<br>높이는 부모 패널 높이(300px) - 100px',
+                    anchor: '-50 -100' //부모 너비에서 50px, 부모 높이에서 100px을 각각 뺀 수치를 적용
+                }]
             });
         });
     </script>
