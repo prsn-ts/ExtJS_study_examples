@@ -9,7 +9,22 @@ Ext.define('MyExtJS.view.chapter3.CardLayout', {
     title: 'Card Layout',
     width: 350,
     height: 300,
-    layout: 'card', //카드형식으로 넘기면서 보여줄 수 있는 레이아웃
+    layout: { //카드형식으로 넘기면서 보여줄 수 있는 레이아웃
+        type: 'card',
+        /*
+            처음 화면 CardLayout 컴포넌트가 로드되며 렌더링 될 때 
+            자식 컴포넌트들(CardChild1, CardChild2, CardChild3)이 같이 로드되는데
+            만약에 자식 컴포넌트가 엄청 많다면 렌더링하는데 오래걸릴 것이고 버벅일 수 있다.
+
+            또한 이번 예제와 같이 카드형식으로 어떤 버튼을 눌렀을 때 특정 컴포넌트를 보여주는 경우
+            굳이 맨 처음 화면이 렌더링될 때 처음으로 보여지는 컴포넌트를 제외한 것들은 버튼을
+            눌렀을 때 화면에 요소들이 추가되는 방식이 성능 상으로도 좋을 것이다
+
+            따라서 부모 컴포넌트(CardLayout)에서 layout의 속성 중 deferedRender를 true로 설정하면
+            자식 컴포넌트(CardChild1, CardChild2, CardChild3)가 활성화되기 전까지는 렌더링을 연기한다.
+        */
+        deferredRender: true
+    },
     initComponent: function() { //CardLayout 컴포넌트가 객체화될 때 맨 처음 실행되는 함수
         var me = this;
         Ext.apply(me, {
@@ -55,7 +70,7 @@ Ext.define('MyExtJS.view.chapter3.CardLayout', {
                 }
             }
         });
-        me.callParent(arguments);
+        me.callParent(arguments); //initComponent() 메소드안에 꼭 있어야한다! 없으면 오류가 난다
     },
 
     cardCheck: function(domId) {
