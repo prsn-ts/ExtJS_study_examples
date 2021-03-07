@@ -1,5 +1,5 @@
 Ext.define('MyExtJS.view.chapter3.ColumnLayout', {
-    alias: 'widget.chapter3.ColumnLayout',
+    alias: 'widget.chapter3-columnlayout',
     extend: 'Ext.panel.Panel',
     title: 'Column Layout',
     width: 350,
