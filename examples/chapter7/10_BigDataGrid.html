@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Ext JS 테마스타일 파일 -->
+    <link rel="stylesheet" href="/bootstrap.css">
+    <!-- Ext JS 코어 라이브러리 -->
+    <script type="text/javascript" src="/ext/build/ext-all-debug.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    Ext.Loader.setConfig({
+        enabled: true,
+        paths: {
+            'MyExtJS': '/app'
+        }
+    });
+    Ext.require([
+        'MyExtJS.view.chapter7.BigDataGrid'
+    ]);
+
+    Ext.onReady(function () {
+        Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
+        var fp = Ext.create('MyExtJS.view.chapter7.BigDataGrid', {
+            stateful: true,     // #3
+            stateId: 'stateGrid',   // #4
+            renderTo: document.body
+        });
+    });
+</script>
+</body>
+</html>
