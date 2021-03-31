@@ -257,16 +257,33 @@
      *          "update": ""      // OPTIONAL
      *      }
      */
+    /* ----------------------------- 기존 코드 ------------------------------- */
+    // "css": [
+    //     {
+    //         // this entry uses an ant variable that is the calculated
+    //         // value of the generated output css file for the app,
+    //         // defined in .sencha/app/defaults.properties
+    //         "path": "${build.out.css.path}",
+    //         "bundle": true,
+    //         "exclude": ["fashion"]
+    //     }
+    // ],
+    /* ---------------------------------------------------------------------- */
+
+    /* ----------------------------- 추가한 코드 ------------------------------- */
     "css": [
         {
-            // this entry uses an ant variable that is the calculated
-            // value of the generated output css file for the app,
-            // defined in .sencha/app/defaults.properties
-            "path": "${build.out.css.path}",
-            "bundle": true,
-            "exclude": ["fashion"]
+            "path": "bootstrap.css",
+            "bootstrap": true
+        },
+        {
+            "path": "resources/css/common.css"
+        },
+        {
+            "path": "lib/google-code-prettify/prettify.css"
         }
     ],
+    /* ------------------------------------------------------------------------ */
 
     /**
      * This option is used to configure the dynamic loader. At present these options

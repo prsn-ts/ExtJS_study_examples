@@ -111,14 +111,16 @@ Ext.define('MyExtJS.view.main.Main', {
     viewModel: {
         type: 'main'
     },
+    requires: [
+        'MyExtJS.view.Header'
+    ],
 
     layout: 'border',
     items: [
         {
             region: 'north',
-            html: '상단 메뉴',
-            frame: true,
-            xtype: 'panel'
+            xtype: 'frameheader',
+            frame: true
         },
         {
             region: 'center',
