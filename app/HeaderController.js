@@ -3,13 +3,13 @@ Ext.define('MyExtJS.view.HeaderController', {
     alias: 'controller.header',
     requires: ['MyExtJS.view.frame.AboutWindow'],
 
-    // listen: {	// #1
-    //     controller: {	// #2
-    //         'main': {	// #3
-    //             togglescreen: 'toggleScreen'	// #4
-    //         }
-    //     }
-    // },
+    listen: {	// #1
+        controller: {	// #2
+            'main': {	// #3
+                togglescreen: 'toggleScreen'	// #4
+            }
+        }
+    },
 
 
     goDashboard : function(){
