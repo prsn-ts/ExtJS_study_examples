@@ -1,7 +1,7 @@
 Ext.define('MyExtJS.view.HeaderController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.header',
-    // requires: ['MyExtJS.view.frame.AboutWindow'],
+    requires: ['MyExtJS.view.frame.AboutWindow'],
 
     // listen: {	// #1
     //     controller: {	// #2
